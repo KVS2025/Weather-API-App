@@ -758,9 +758,17 @@ body.day-mode .footer .heart {
         font-size: 42px;
     }
 
+    /* Stack weather summary vertically and center it */
     .weather-summary-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
         padding: 18px 16px;
         gap: 10px;
+    }
+
+    .weather-summary-info {
+        text-align: center;
     }
 
     .weather-summary-img {
@@ -779,6 +787,7 @@ body.day-mode .footer .heart {
 
     .location {
         padding: 14px 14px;
+        justify-content: center;
     }
 
     .country-txt {
@@ -790,20 +799,23 @@ body.day-mode .footer .heart {
         width: 100%;
         margin-left: 0;
         margin-top: 6px;
+        text-align: center;
     }
 
+    /* Allow footer to be wider but ensure it fits */
     .footer {
         bottom: 15px;
-        padding: 8px 20px;
-        width: 90%;
+        padding: 8px 16px;
+        width: 85%;
+        border-radius: 20px;
     }
 
     .footer p {
-        font-size: 13px;
+        font-size: 12px;
     }
 
     .footer .heart {
-        font-size: 15px;
+        font-size: 14px;
     }
 }
 
