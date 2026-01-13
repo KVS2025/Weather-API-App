@@ -38,11 +38,11 @@ if (savedManualTheme) {
 themeToggleBtn.addEventListener('click', () => {
     const isDayMode = body.classList.contains('day-mode')
     const newTheme = isDayMode ? 'night' : 'day'
-    
+
     // Save manual override
     manualThemeOverride = newTheme
     localStorage.setItem('manualTheme', newTheme)
-    
+
     applyTheme(newTheme)
 })
 
@@ -58,17 +58,17 @@ function autoDetectDayNight(timezoneOffset) {
         applyTheme(manualThemeOverride)
         return
     }
-    
+
     // Get UTC time
     const now = new Date()
     const utcHours = now.getUTCHours()
-    
+
     // Calculate local time in the city
     const cityHours = (utcHours + (timezoneOffset / 3600)) % 24
-    
+
     // Determine if it's day or night (day: 6am-6pm)
     const isDay = cityHours >= 6 && cityHours < 18
-    
+
     applyTheme(isDay ? 'day' : 'night')
 }
 
@@ -77,13 +77,13 @@ function getCityTime(timezoneOffset) {
     const now = new Date()
     const utcTime = now.getTime() + (now.getTimezoneOffset() * 60000)
     const cityTime = new Date(utcTime + (timezoneOffset * 1000))
-    
+
     const options = {
         hour: '2-digit',
         minute: '2-digit',
         hour12: true
     }
-    
+
     return cityTime.toLocaleTimeString('en-US', options)
 }
 
@@ -116,12 +116,12 @@ async function getFetchData(endPoint, city) {
 
 // Get Weather Icon based on condition ID
 function getWeatherIcon(id) {
-    if(id <= 232) return 'thunderstorm.svg'
-    if(id <= 321) return 'drizzle.svg'
-    if(id <= 531) return 'rain.svg'
-    if(id <= 622) return 'snow.svg'
-    if(id <= 781) return 'atmosphere.svg'
-    if(id == 800) return 'clear.svg'
+    if (id <= 232) return 'thunderstorm.svg'
+    if (id <= 321) return 'drizzle.svg'
+    if (id <= 531) return 'rain.svg'
+    if (id <= 622) return 'snow.svg'
+    if (id <= 781) return 'atmosphere.svg'
+    if (id == 800) return 'clear.svg'
     else return 'clouds.svg'
 }
 
@@ -141,23 +141,27 @@ function getCurrentDate() {
 async function updateWeatherInfo(city) {
     const weatherData = await getFetchData('weather', city)
 
-    if(weatherData.cod != 200) {
+    if (weatherData.cod != 200) {
         showDisplaySection(notFoundSection)
         return
     }
-    
+
     console.log(weatherData)
 
     const {
         name: country,
-        main: {temp, humidity},
-        weather: [{ id, main}],
-        wind: {speed},
+        main: { temp, humidity },
+        weather: [{ id, main }],
+        wind: { speed },
         timezone
     } = weatherData
 
     // Store timezone for updates
     currentCityTimezone = timezone
+
+    // Reset manual override so the new city's time takes precedence
+    manualThemeOverride = null
+    localStorage.removeItem('manualTheme')
 
     // Update weather info
     countryTxt.textContent = country
@@ -168,7 +172,7 @@ async function updateWeatherInfo(city) {
 
     // Update date and time
     currentDateTxt.textContent = getCurrentDate()
-    
+
     // Add city time if element doesn't exist, create it
     let cityTimeElement = document.querySelector('.city-time-txt')
     if (!cityTimeElement) {
@@ -196,7 +200,7 @@ async function updateForecastInfo(city) {
     const todayDate = new Date().toISOString().split('T')[0]
 
     forecastItemsContainer.innerHTML = ''
-    
+
     forecastData.list.forEach(forecastWeather => {
         if (
             forecastWeather.dt_txt.includes(timeTaken) &&
@@ -212,8 +216,8 @@ function updateForecastItems(weatherData) {
     console.log(weatherData)
     const {
         dt_txt: date,
-        main: {temp},
-        weather: [{id}],
+        main: { temp },
+        weather: [{ id }],
     } = weatherData
 
     const dateTaken = new Date(date)
@@ -230,7 +234,7 @@ function updateForecastItems(weatherData) {
             <h5 class="forecast-item-temp">${Math.round(temp)} °C</h5>
         </div>
     `
-    forecastItemsContainer.insertAdjacentHTML('beforeend', forecastItem)    
+    forecastItemsContainer.insertAdjacentHTML('beforeend', forecastItem)
 }
 
 // Show Display Section
