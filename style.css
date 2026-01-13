@@ -622,6 +622,62 @@ body.day-mode .forecast-item:hover {
     line-height: 1.6;
 }
 
+/* FOOTER */
+.footer {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 999;
+    animation: fadeIn 0.6s ease;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.15));
+    padding: 12px 32px;
+    border-radius: 50px;
+    backdrop-filter: blur(20px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+body.day-mode .footer {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.85));
+    border-color: rgba(135, 206, 235, 0.4);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.footer p {
+    font-size: 16px;
+    font-weight: 600;
+    opacity: 1;
+    margin: 0;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+body.day-mode .footer p {
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    color: #1e293b;
+}
+
+.footer .heart {
+    display: inline-block;
+    animation: heartbeat 1.5s ease-in-out infinite;
+    color: #ff6b6b;
+    font-size: 18px;
+    margin: 0 4px;
+    filter: drop-shadow(0 0 8px rgba(255, 107, 107, 0.6));
+}
+
+body.day-mode .footer .heart {
+    filter: drop-shadow(0 0 10px rgba(255, 107, 107, 0.5));
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    10%, 30% { transform: scale(1.2); }
+    20%, 40% { transform: scale(1); }
+}
+
 /* RESPONSIVE DESIGN */
 @media (max-width: 480px) {
     .theme-toggle-container {
@@ -683,6 +739,19 @@ body.day-mode .forecast-item:hover {
         width: 100%;
         margin-left: 0;
         margin-top: 8px;
+    }
+
+    .footer {
+        bottom: 20px;
+        padding: 10px 24px;
+    }
+
+    .footer p {
+        font-size: 14px;
+    }
+
+    .footer .heart {
+        font-size: 16px;
     }
 }
 
