@@ -39,7 +39,7 @@ body.day-mode::before {
     width: 100%;
     height: 100%;
     background: radial-gradient(circle at 30% 20%, rgba(255, 223, 0, 0.3), transparent 40%),
-                radial-gradient(circle at 70% 80%, rgba(135, 206, 235, 0.2), transparent 50%);
+        radial-gradient(circle at 70% 80%, rgba(135, 206, 235, 0.2), transparent 50%);
     pointer-events: none;
     transition: opacity 0.8s ease;
 }
@@ -51,8 +51,8 @@ body.night-mode::before {
     width: 100%;
     height: 100%;
     background: radial-gradient(circle at 20% 50%, rgba(79, 70, 229, 0.15), transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.15), transparent 50%),
-                radial-gradient(circle at 40% 20%, rgba(236, 72, 153, 0.15), transparent 50%);
+        radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.15), transparent 50%),
+        radial-gradient(circle at 40% 20%, rgba(236, 72, 153, 0.15), transparent 50%);
     pointer-events: none;
     transition: opacity 0.8s ease;
 }
@@ -63,7 +63,7 @@ body.night-mode::after {
     position: fixed;
     width: 100%;
     height: 100%;
-    background-image: 
+    background-image:
         radial-gradient(2px 2px at 20% 30%, white, transparent),
         radial-gradient(2px 2px at 60% 70%, white, transparent),
         radial-gradient(1px 1px at 50% 50%, white, transparent),
@@ -85,8 +85,15 @@ body.day-mode::after {
 }
 
 @keyframes twinkle {
-    0%, 100% { opacity: 0.8; }
-    50% { opacity: 0.4; }
+
+    0%,
+    100% {
+        opacity: 0.8;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
 }
 
 /* Sun for day mode */
@@ -111,8 +118,15 @@ body.day-mode .sun-decoration {
 }
 
 @keyframes sunGlow {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.1); }
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
 }
 
 /* Moon for night mode */
@@ -234,13 +248,13 @@ body.day-mode .moon-icon {
     max-width: 440px;
     min-height: 580px;
     z-index: 1;
-    background: linear-gradient(135deg, 
-        rgba(255, 255, 255, 0.15) 0%, 
-        rgba(255, 255, 255, 0.08) 100%);
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.15) 0%,
+            rgba(255, 255, 255, 0.08) 100%);
     border-radius: 32px;
     backdrop-filter: blur(40px) saturate(180%);
     padding: 35px 32px;
-    box-shadow: 
+    box-shadow:
         0 8px 32px 0 rgba(0, 0, 0, 0.37),
         inset 0 1px 0 0 rgba(255, 255, 255, 0.2),
         0 0 0 1px rgba(255, 255, 255, 0.1);
@@ -249,10 +263,10 @@ body.day-mode .moon-icon {
 }
 
 body.day-mode .main-container {
-    background: linear-gradient(135deg, 
-        rgba(255, 255, 255, 0.95) 0%, 
-        rgba(255, 255, 255, 0.85) 100%);
-    box-shadow: 
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.95) 0%,
+            rgba(255, 255, 255, 0.85) 100%);
+    box-shadow:
         0 8px 32px 0 rgba(0, 0, 0, 0.15),
         inset 0 1px 0 0 rgba(255, 255, 255, 1),
         0 0 0 1px rgba(135, 206, 235, 0.3);
@@ -271,6 +285,7 @@ body.day-mode .regular-txt {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -368,8 +383,13 @@ body.day-mode .search-btn:hover {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 .location-date-container {
@@ -449,8 +469,15 @@ body.day-mode .weather-summary-container {
 }
 
 @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-12px); }
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
 }
 
 .weather-summary-info {
@@ -607,8 +634,15 @@ body.day-mode .forecast-item:hover {
 }
 
 @keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
 }
 
 .section-message h1 {
@@ -673,9 +707,21 @@ body.day-mode .footer .heart {
 }
 
 @keyframes heartbeat {
-    0%, 100% { transform: scale(1); }
-    10%, 30% { transform: scale(1.2); }
-    20%, 40% { transform: scale(1); }
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    10%,
+    30% {
+        transform: scale(1.2);
+    }
+
+    20%,
+    40% {
+        transform: scale(1);
+    }
 }
 
 /* RESPONSIVE DESIGN */
@@ -684,12 +730,12 @@ body.day-mode .footer .heart {
         top: 20px;
         right: 20px;
     }
-    
+
     .theme-toggle-btn {
         width: 50px;
         height: 50px;
     }
-    
+
     .theme-icon {
         font-size: 24px;
     }
@@ -703,31 +749,36 @@ body.day-mode .footer .heart {
     }
 
     .main-container {
-        padding: 28px 24px;
+        padding: 22px 16px;
         max-width: 100%;
         min-height: auto;
     }
 
     .temp-txt {
-        font-size: 48px;
+        font-size: 42px;
+    }
+
+    .weather-summary-container {
+        padding: 18px 16px;
+        gap: 10px;
     }
 
     .weather-summary-img {
-        width: 110px;
-        height: 110px;
+        width: 100px;
+        height: 100px;
     }
 
     .condition-item span {
-        font-size: 28px;
+        font-size: 24px;
     }
 
     .forecast-item {
-        min-width: 75px;
-        padding: 14px 12px;
+        min-width: 70px;
+        padding: 12px 10px;
     }
 
     .location {
-        padding: 14px 18px;
+        padding: 14px 14px;
     }
 
     .country-txt {
@@ -735,23 +786,24 @@ body.day-mode .footer .heart {
     }
 
     .current-date-txt {
-        font-size: 15px;
+        font-size: 14px;
         width: 100%;
         margin-left: 0;
-        margin-top: 8px;
+        margin-top: 6px;
     }
 
     .footer {
-        bottom: 20px;
-        padding: 10px 24px;
+        bottom: 15px;
+        padding: 8px 20px;
+        width: 90%;
     }
 
     .footer p {
-        font-size: 14px;
+        font-size: 13px;
     }
 
     .footer .heart {
-        font-size: 16px;
+        font-size: 15px;
     }
 }
 
@@ -762,6 +814,7 @@ body.day-mode .footer .heart {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
     *,
     *::before,
     *::after {
