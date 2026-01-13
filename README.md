@@ -67,11 +67,11 @@ If an error occurs (invalid city, API issue, or network failure), a clear error 
 + Network connectivity issues
 
 ## 📸 Screenshots: 
-<img width="1897" height="828" alt="Screenshot 2026-01-13 100626" src="https://github.com/user-attachments/assets/c1c85534-1389-4af8-83d8-5a1bd19637e1" />
+<img width="1898" height="824" alt="image" src="https://github.com/user-attachments/assets/f398e464-c58e-4e7c-bb27-9b4b886af64a" />
 
-<img width="1897" height="826" alt="Screenshot 2026-01-13 100702" src="https://github.com/user-attachments/assets/f85a577d-08b2-4bd2-9152-a2b75e241ba5" />
+<img width="1896" height="828" alt="Screenshot 2026-01-13 102845" src="https://github.com/user-attachments/assets/c0febad3-f77f-46d3-a5e3-ee119e4e7aad" />
 
-<img width="1898" height="827" alt="image" src="https://github.com/user-attachments/assets/dff0b9cd-a7df-4af1-850a-e92c6ab7e7f0" />
+<img width="1899" height="824" alt="image" src="https://github.com/user-attachments/assets/501af42d-3090-47e6-8093-4455f5fcfa13" />
 
 
 ## Contributing
