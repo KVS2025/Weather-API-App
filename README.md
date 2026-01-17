@@ -34,19 +34,19 @@ No local server or setup required.
 
 ## 📌 How It Works
 
-* User Input
+* User Input:
 The user enters a city name into the search field.
 
-* API Request
+* API Request:
 A GET request is sent to the Weather API using the fetch() method.
 
-* Data Processing
+* Data Processing:
 The API returns a JSON response, which is parsed to extract required weather details.
 
-* UI Update
+* UI Update:
 JavaScript dynamically updates the DOM with the fetched data.
 
-* Error Catching
+* Error Catching:
 If an error occurs (invalid city, API issue, or network failure), a clear error message is displayed.
 
 ## ❗Error Handling
