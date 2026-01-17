@@ -83,17 +83,17 @@ Please make sure to update tests as appropriate.
 
 ## 🧠 Learning Outcomes
 
-1. This project demonstrates practical understanding of:
+###This project demonstrates practical understanding of:
 
-2. Asynchronous JavaScript (fetch, Promises)
+1. Asynchronous JavaScript (fetch, Promises)
 
-3. Working with JSON data structures
+2. Working with JSON data structures
 
-4. Efficient DOM manipulation
+3. Efficient DOM manipulation
 
-5. Robust error-handling strategies
+4. Robust error-handling strategies
 
-6. Clean and organized project structure
+5. Clean and organized project structure
 
 ## 📄 License
 
