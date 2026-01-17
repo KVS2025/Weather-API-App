@@ -83,7 +83,7 @@ Please make sure to update tests as appropriate.
 
 ## 🧠 Learning Outcomes
 
-###This project demonstrates practical understanding of:
+### This project demonstrates practical understanding of:
 
 1. Asynchronous JavaScript (fetch, Promises)
 
